@@ -29,12 +29,14 @@ This leads to:
 Vision Transformer (ViT-Base-Patch16-224)
 12 encoder layers
 768-dimensional embeddings
+
 Multi-head self-attention mechanism
 🔹 Phase 1: Baseline Reproduction
 Full fine-tuning (86M parameters)
 Strong performance but:
 Training collapse observed
 Overfitting on small dataset
+
 🔹 Phase 2: Proposed Improvements
 ✔ Layer Freezing
 Frozen:
@@ -53,16 +55,21 @@ Improves generalization
 ✔ Validation Fix
 Fixed data leakage in validation pipeline
 Ensured clean, deterministic evaluation
+
 🧪 Datasets
+
 🏥 Kermany Chest X-Ray Dataset
 5,863 images
 Classes: Normal, Pneumonia
 Strong class imbalance handled via weighting
+
 🧬 BloodMNIST (Extension Study)
 17,092 images
 8-class blood cell classification
 Used to test generalization of approach
+
 📊 Results Summary
+
 🩻 Kermany Dataset
 Accuracy: ~89.9%
 Recall: 94.87% (improved)
@@ -72,7 +79,9 @@ Key improvement: higher sensitivity for pneumonia detection
 Accuracy: 90.30%
 Macro F1: 89.25%
 AUC-ROC: 0.9917
+
 📈 Key Findings
+
 Full fine-tuning leads to memorization and collapse
 Partial freezing significantly stabilizes training
 Recall improves at cost of slight specificity drop (clinically acceptable)
